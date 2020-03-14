@@ -9,43 +9,7 @@ import java.util.Scanner;
  * @create 2020/3/11 - 17:06
  */
 
-//扑克牌类
-class Holdem {
-    private String num;
 
-    public Holdem(String num) {
-        this.num = num;
-    }
-
-    public int getNum() {
-        if (this.num.charAt(0) == 'A')
-            return 14;
-        if (this.num.charAt(0) == 'K')
-            return 13;
-        if (this.num.charAt(0) == 'Q')
-            return 12;
-        if (this.num.charAt(0) == 'J')
-            return 11;
-        if (this.num.charAt(0) == 'T')
-            return 10;
-        return this.num.charAt(0) - 48;
-    }
-
-    public char getColor() {
-        return this.num.charAt(1);
-    }
-
-    public void setNum(String num) {
-        this.num = num;
-    }
-
-    @Override
-    public String toString() {
-        return "Holdem{" +
-                "num='" + num + '\'' +
-                '}';
-    }
-}
 
 public class TexasHoldem {
 
@@ -72,6 +36,7 @@ public class TexasHoldem {
             System.out.println("Tie");
         }
     }
+
 
     //比较Black和White牌的大小
     public static int compare(ArrayList<Holdem> black, ArrayList<Holdem> white) {
@@ -119,7 +84,6 @@ public class TexasHoldem {
             int k = 1;
             for (; array[k] != array[k - 1]; k++);
             bubbleSort(array, k - 1, k);
-            k++;
             for (; array[k] != array[k - 1]; k++);
             bubbleSort(array, k - 1, k);
         }
